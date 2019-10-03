@@ -14,8 +14,6 @@
                           SetSdkBrandingInfo">
     <PropertyGroup>
       <DotnetDebToolDir>$(MSBuildProjectDirectory)</DotnetDebToolDir>
-      <!--<DotnetDebToolDir>$(MSBuildThisFileDirectory)/dotnet-deb-tool-consumer</DotnetDebToolDir>-->
-      <!--<PackageTool>$(NuGetPackagesDir)/dotnet-deb-tool/$(DotnetDebToolVersion)/lib/netcoreapp2.0/tool/package_tool</PackageTool>-->
     </PropertyGroup>
 
     <!-- constants -->
@@ -159,15 +157,20 @@
         <ReplacementString>$(SdkBrandName)</ReplacementString>
       </DebianConfigTokenValues>
       <DebianConfigTokenValues Include="%SHARED_FRAMEWORK_DEBIAN_PACKAGE_VERSION%">
-        <ReplacementString>$(MicrosoftNETCoreAppPackageVersionWithTilde)</ReplacementString>
+        <ReplacementString>$(NETCoreAppRuntimeVersionWithTilde)</ReplacementString>
+      </DebianConfigTokenValues>
+      <DebianConfigTokenValues Include="%REF_DEBIAN_PACKAGE_VERSION%">
+        <ReplacementString>$(NETCoreAppRefVersionWithTilde)</ReplacementString>
       </DebianConfigTokenValues>
       <DebianConfigTokenValues Include="%NET_STANDARD_DEBIAN_PACKAGE_VERSION%">
-        <ReplacementString>$(NetStandardTargetingPackPackageVersionWithTilde)</ReplacementString>
+        <ReplacementString>$(NETStandardVersionWithTilde)</ReplacementString>
       </DebianConfigTokenValues>
       <DebianConfigTokenValues Include="%ASPNETCORE_SHAREDFX_DEBIAN_PACKAGE_VERSION%">
-        <ReplacementString>$(AspNetCoreVersionWithTilde)</ReplacementString>
+        <ReplacementString>$(AspNetCoreRuntimeVersionWithTilde)</ReplacementString>
       </DebianConfigTokenValues>
-
+      <DebianConfigTokenValues Include="%ASPNETCORE_REF_DEBIAN_PACKAGE_VERSION%">
+        <ReplacementString>$(AspNetCoreRefVersionWithTilde)</ReplacementString>
+      </DebianConfigTokenValues>
       <DebianPostInstTokenValues Include="%SDK_VERSION%">
         <ReplacementString>$(SdkVersion)</ReplacementString>
       </DebianPostInstTokenValues>
