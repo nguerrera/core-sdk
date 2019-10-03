@@ -19,7 +19,7 @@
       </GetLinuxNativeInstallerDependencyVersions>
 
       <GetLinuxNativeInstallerDependencyVersions  PackageVersion="$(MicrosoftAspNetCoreAppRefPackageVersion)">
-        <Output TaskParameter="VersionWithTilde" PropertyName="AspNetCoreRefVersionWithTilde">
+        <Output TaskParameter="VersionWithTilde" PropertyName="AspNetCoreRefVersionWithTilde" />
       </GetLinuxNativeInstallerDependencyVersions>
 
       <GetLinuxNativeInstallerDependencyVersions PackageVersion="$(HostFxrVersion)">
