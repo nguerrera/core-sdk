@@ -223,11 +223,11 @@
       <SharedHostRpmPackageName>dotnet-host</SharedHostRpmPackageName>
       <AspNetCoreSharedFxRpmPackageName>aspnetcore-runtime-$(AspNetCoreMajorMinorVersion)</AspNetCoreSharedFxRpmPackageName>
       <AspNetCoreSharedFxRpmPackageName>$(AspNetCoreSharedFxRpmPackageName.ToLower())</AspNetCoreSharedFxRpmPackageName>
-      <AspNetCoreSharedFxRpmPackageFileName>aspnetcore-runtime-$(AspNetCoreVersion)</AspNetCoreSharedFxRpmPackageFileName>
+      <AspNetCoreSharedFxRpmPackageFileName>aspnetcore-runtime-$(MicrosoftAspNetCoreRuntimePackageVersion)</AspNetCoreSharedFxRpmPackageFileName>
       <AspNetCoreSharedFxRpmPackageFileName>$(AspNetCoreSharedFxRpmPackageFileName.ToLower())</AspNetCoreSharedFxRpmPackageFileName>
       <AspNetTargetingPackRpmPackageName>aspnetcore-targeting-pack-$(AspNetCoreMajorMinorVersion)</AspNetTargetingPackRpmPackageName>
       <AspNetTargetingPackRpmPackageName>$(AspNetTargetingPackRpmPackageName.ToLower())</AspNetTargetingPackRpmPackageName>
-      <AspNetTargetingPackRpmPackageFileName>aspnetcore-targeting-pack-$(AspNetCoreVersion)</AspNetTargetingPackRpmPackageFileName>
+      <AspNetTargetingPackRpmPackageFileName>aspnetcore-targeting-pack-$(MicrosoftAspNetCoreRefPackageVersion)</AspNetTargetingPackRpmPackageFileName>
       <AspNetTargetingPackRpmPackageFileName>$(AspNetTargetingPackRpmPackageFileName.ToLower())</AspNetTargetingPackRpmPackageFileName>
       <AfterInstallHostScriptTemplateFile>$(ScriptsDir)/$(AfterInstallHostScriptName)</AfterInstallHostScriptTemplateFile>
       <AfterInstallHostScriptDestinationFile>$(RpmLayoutScripts)/$(AfterInstallHostScriptName)</AfterInstallHostScriptDestinationFile>

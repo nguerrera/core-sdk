@@ -2,15 +2,15 @@
 <Project>
   <Target Name="CalculateLinuxNativeInstallerDependencyVersions">
     <PropertyGroup>
-      <MicrosoftNETCoreAppPatchSeparatorIndex>$([MSBuild]::Add($(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.IndexOf('.')), 1))</MicrosoftNETCoreAppPatchSeparatorIndex>
-      <MicrosoftNETCoreAppPatchSeparatorIndex>$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.IndexOf('.', $(MicrosoftNETCoreAppPatchSeparatorIndex)))</MicrosoftNETCoreAppPatchSeparatorIndex>
-      <MicrosoftNETCoreAppMajorMinorVersion>$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.Substring(0, $(MicrosoftNETCoreAppPatchSeparatorIndex)))</MicrosoftNETCoreAppMajorMinorVersion>
+      <MicrosoftNETCoreAppPatchSeparatorIndex>$([MSBuild]::Add($(MicrosoftNETCoreAppRuntimePackageVersion.IndexOf('.')), 1))</MicrosoftNETCoreAppPatchSeparatorIndex>
+      <MicrosoftNETCoreAppPatchSeparatorIndex>$(MicrosoftNETCoreAppRuntimePackageVersion.IndexOf('.', $(MicrosoftNETCoreAppPatchSeparatorIndex)))</MicrosoftNETCoreAppPatchSeparatorIndex>
+      <MicrosoftNETCoreAppMajorMinorVersion>$(MicrosoftNETCoreAppRuntimePackageVersion.Substring(0, $(MicrosoftNETCoreAppPatchSeparatorIndex)))</MicrosoftNETCoreAppMajorMinorVersion>
 
-      <MicrosoftNETCoreAppVersionPreReleaseSeparator>$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.IndexOf('-'))</MicrosoftNETCoreAppVersionPreReleaseSeparator>
-      <MicrosoftNETCoreAppMajorMinorPatchVersion>$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion)</MicrosoftNETCoreAppMajorMinorPatchVersion>
-      <MicrosoftNETCoreAppMajorMinorPatchVersion Condition=" '$(MicrosoftNETCoreAppVersionPreReleaseSeparator)' != -1 ">$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.Substring(0, $(MicrosoftNETCoreAppVersionPreReleaseSeparator)))</MicrosoftNETCoreAppMajorMinorPatchVersion>
+      <MicrosoftNETCoreAppVersionPreReleaseSeparator>$(MicrosoftNETCoreAppRuntimePackageVersion.IndexOf('-'))</MicrosoftNETCoreAppVersionPreReleaseSeparator>
+      <MicrosoftNETCoreAppMajorMinorPatchVersion>$(MicrosoftNETCoreAppRuntimePackageVersion)</MicrosoftNETCoreAppMajorMinorPatchVersion>
+      <MicrosoftNETCoreAppMajorMinorPatchVersion Condition=" '$(MicrosoftNETCoreAppVersionPreReleaseSeparator)' != -1 ">$(MicrosoftWindowsDesktopAppRuntimePackageVersion.Substring(0, $(MicrosoftNETCoreAppVersionPreReleaseSeparator)))</MicrosoftNETCoreAppMajorMinorPatchVersion>
       <MicrosoftNETCoreAppVersionPreReleaseSeparatorStartIndex>$([MSBuild]::Add($(MicrosoftNETCoreAppVersionPreReleaseSeparator), 1))</MicrosoftNETCoreAppVersionPreReleaseSeparatorStartIndex>
-      <MicrosoftNETCoreVersionSuffix Condition=" '$(MicrosoftNETCoreAppVersionPreReleaseSeparator)' != -1 ">$(MicrosoftWindowsDesktopAppRuntimewinx64PackageVersion.Substring($(MicrosoftNETCoreAppVersionPreReleaseSeparatorStartIndex)))</MicrosoftNETCoreVersionSuffix>
+      <MicrosoftNETCoreVersionSuffix Condition=" '$(MicrosoftNETCoreAppVersionPreReleaseSeparator)' != -1 ">$(MicrosoftWindowsDesktopAppRuntimePackageVersion.Substring($(MicrosoftNETCoreAppVersionPreReleaseSeparatorStartIndex)))</MicrosoftNETCoreVersionSuffix>
       <MicrosoftNETCoreAppPackageVersionWithTilde>$(MicrosoftNETCoreAppMajorMinorPatchVersion)</MicrosoftNETCoreAppPackageVersionWithTilde>
       <MicrosoftNETCoreAppPackageVersionWithTilde Condition=" '$(MicrosoftNETCoreAppVersionPreReleaseSeparator)' != -1 ">$(MicrosoftNETCoreAppMajorMinorPatchVersion)~$(MicrosoftNETCoreVersionSuffix)</MicrosoftNETCoreAppPackageVersionWithTilde>
 
@@ -22,15 +22,15 @@
       <NetStandardTargetingPackPackageVersionWithTilde>$(NetStandardTargetingPackMajorMinorPatchVersion)</NetStandardTargetingPackPackageVersionWithTilde>
       <NetStandardTargetingPackPackageVersionWithTilde Condition=" '$(NetStandardTargetingPackVersionPreReleaseSeparator)' != -1 ">$(NetStandardTargetingPackMajorMinorPatchVersion)~$(NetStandardTargetingPackVersionSuffix)</NetStandardTargetingPackPackageVersionWithTilde>
 
-      <AspNetCoreVersionPatchSeparatorIndex>$([MSBuild]::Add($(AspNetCoreVersion.IndexOf('.')), 1))</AspNetCoreVersionPatchSeparatorIndex>
-      <AspNetCoreVersionPatchSeparatorIndex>$(AspNetCoreVersion.IndexOf('.', $(AspNetCoreVersionPatchSeparatorIndex)))</AspNetCoreVersionPatchSeparatorIndex>
-      <AspNetCoreMajorMinorVersion>$(AspNetCoreVersion.Substring(0, $(AspNetCoreVersionPatchSeparatorIndex)))</AspNetCoreMajorMinorVersion>
+      <AspNetCoreVersionPatchSeparatorIndex>$([MSBuild]::Add($(MicrosoftAspNetCoreAppRuntimePackageVersion.IndexOf('.')), 1))</AspNetCoreVersionPatchSeparatorIndex>
+      <AspNetCoreVersionPatchSeparatorIndex>$(MicrosoftAspNetCoreAppRuntimePackageVersion.IndexOf('.', $(AspNetCoreVersionPatchSeparatorIndex)))</AspNetCoreVersionPatchSeparatorIndex>
+      <AspNetCoreMajorMinorVersion>$(MicrosoftAspNetCoreAppRuntimePackageVersion.Substring(0, $(AspNetCoreVersionPatchSeparatorIndex)))</AspNetCoreMajorMinorVersion>
 
-      <AspNetCoreVersionPreReleaseSeparator>$(AspNetCoreVersion.IndexOf('-'))</AspNetCoreVersionPreReleaseSeparator>
-      <AspNetCoreMajorMinorPatchVersion>$(AspNetCoreVersion)</AspNetCoreMajorMinorPatchVersion>
-      <AspNetCoreMajorMinorPatchVersion Condition=" '$(AspNetCoreVersionPreReleaseSeparator)' != -1 ">$(AspNetCoreVersion.Substring(0, $(AspNetCoreVersionPreReleaseSeparator)))</AspNetCoreMajorMinorPatchVersion>
+      <AspNetCoreVersionPreReleaseSeparator>$(MicrosoftAspNetCoreAppRuntimePackageVersion.IndexOf('-'))</AspNetCoreVersionPreReleaseSeparator>
+      <AspNetCoreMajorMinorPatchVersion>$(MicrosoftAspNetCoreAppRuntimePackageVersion)</AspNetCoreMajorMinorPatchVersion>
+      <AspNetCoreMajorMinorPatchVersion Condition=" '$(AspNetCoreVersionPreReleaseSeparator)' != -1 ">$(MicrosoftAspNetCoreAppRuntimePackageVersion.Substring(0, $(AspNetCoreVersionPreReleaseSeparator)))</AspNetCoreMajorMinorPatchVersion>
       <AspNetCoreVersionPreReleaseSeparatorStartIndex>$([MSBuild]::Add($(AspNetCoreVersionPreReleaseSeparator), 1))</AspNetCoreVersionPreReleaseSeparatorStartIndex>
-      <AspNetCoreVersionSuffix Condition=" '$(AspNetCoreVersionPreReleaseSeparator)' != -1 ">$(AspNetCoreVersion.Substring($(AspNetCoreVersionPreReleaseSeparatorStartIndex)))</AspNetCoreVersionSuffix>
+      <AspNetCoreVersionSuffix Condition=" '$(AspNetCoreVersionPreReleaseSeparator)' != -1 ">$(MicrosoftAspNetCoreAppRuntimePackageVersion.Substring($(AspNetCoreVersionPreReleaseSeparatorStartIndex)))</AspNetCoreVersionSuffix>
       <AspNetCoreVersionWithTilde>$(AspNetCoreMajorMinorPatchVersion)</AspNetCoreVersionWithTilde>
       <AspNetCoreVersionWithTilde Condition=" '$(AspNetCoreVersionPreReleaseSeparator)' != -1 ">$(AspNetCoreMajorMinorPatchVersion)~$(AspNetCoreVersionSuffix)</AspNetCoreVersionWithTilde>
 
