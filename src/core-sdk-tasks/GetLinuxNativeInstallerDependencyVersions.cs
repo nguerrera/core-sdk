@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Microsoft.DotNet.Cli.Build
 {
-    public class GetRuntimePackRids : Task
+    public class GetLinuxNativeInstallerDependencyVersions : Task
     {
         [Required]
         public string PackageVersion { get; set; }
