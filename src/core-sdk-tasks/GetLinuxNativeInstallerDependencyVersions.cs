@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Microsoft.DotNet.Cli.Build
 {
-    public class GetLinuxNativeInstallerDependencyVersions : Task
+    public class GetRuntimePackRids : Task
     {
         [Required]
         public string PackageVersion { get; set; }
@@ -31,6 +31,8 @@ namespace Microsoft.DotNet.Cli.Build
             string[] prereleaseSplit = PackageVersion.Split('-', count: 2);
             MajorMinorPatchVersion = prereleaseSplit[0];            
             VersionWithTilde = MajorMinorPatchVersion + prereleaseSplit.Length > 1 ? "~" + prereleaseSplit[1] : "";
+
+            return true;
         }
     }
 }
