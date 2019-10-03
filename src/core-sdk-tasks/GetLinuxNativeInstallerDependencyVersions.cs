@@ -30,8 +30,12 @@ namespace Microsoft.DotNet.Cli.Build
 
             string[] prereleaseSplit = PackageVersion.Split('-', count: 2);
             MajorMinorPatchVersion = prereleaseSplit[0];
-            VersionWithTilde = MajorMinorPatchVersion 
-                + prereleaseSplit.Length > 1 ? ("~" + prereleaseSplit[1]) : "";
+            VersionWithTilde = MajorMinorPatchVersion;
+
+            if (prereleaseSplit.Length > 1)
+            {
+                VersionWithTilde += "~" + prereleaseSplit[1];
+            }
 
             return true;
         }
