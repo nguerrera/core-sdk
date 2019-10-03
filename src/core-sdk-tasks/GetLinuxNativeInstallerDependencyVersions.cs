@@ -15,13 +15,13 @@ namespace Microsoft.DotNet.Cli.Build
         public string PackageVersion { get; set; }
 
         [Output]
-        public string MajorMinorVersion { get; }
+        public string MajorMinorVersion { get; private set; }
 
         [Output]
-        public string MajorMinorPatchVersion { get; }
+        public string MajorMinorPatchVersion { get; private set; }
 
         [Output]
-        public string VersionWithTilde { get; }
+        public string VersionWithTilde { get; private set; }
 
         public override bool Execute()
         {
