@@ -13,8 +13,8 @@
       <GetLinuxNativeInstallerDependencyVersions>
 
       <GetLinuxNativeInstallerDependencyVersions PackageVersion="$(MicrosoftAspNetCoreAppRuntimePackageVersion)">
-        <Output TaskParameter="VersionWithTilde" PropertyName="AspNetCoreRuntimeVersionWithTilde">
-        <Output TaskParameter="MajorMinorVersion" PropertyName="AspNetCoreMajorMinorVersion">
+        <Output TaskParameter="VersionWithTilde" PropertyName="AspNetCoreRuntimeVersionWithTilde" />
+        <Output TaskParameter="MajorMinorVersion" PropertyName="AspNetCoreMajorMinorVersion" />
         <Output TaskParameter="MajorMinorVersion" PropertyName="AspNetCoreMajorMinorPatchVersion" />
       </GetLinuxNativeInstallerDependencyVersions>
 
