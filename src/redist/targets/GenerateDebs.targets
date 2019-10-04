@@ -194,7 +194,8 @@
                             GenerateDebsInner"/>
 
   <Target Name="GenerateDebsInner"
-          DependsOnTargets="SetupDebProps;
+          DependsOnTargets="SetupBundledComponents;
+                            SetupDebProps;
                             TestDebuild;
                             BuildSdkDeb;
                             TestSdkDeb"
@@ -284,10 +285,6 @@
         InputFiles="$(DebianConfigTemplateFile)"
         DestinationFiles="$(DebianConfigJsonFile)"
         ReplacementItems="@(DebianConfigTokenValues)" />
-
-      <!--<Chmod
-        Glob="$(PackageTool)"
-        Mode="u+x" />-->
 
       <!-- Build SDK Deb package -->
       <DotNetDebTool ToolPath="$([System.IO.Path]::GetDirectoryName($(DotNetTool)))"
