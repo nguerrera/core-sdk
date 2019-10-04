@@ -26,7 +26,7 @@
     </GetLinuxNativeInstallerDependencyVersions>
 
     <GetLinuxNativeInstallerDependencyVersions PackageVersion="$(NETStandardLibraryRefPackageVersion)">
-      <Output TaskParameter="VersionWithTidle" PropertyName="NetStandardTargetingPackPackageVersionWithTilde" />
+      <Output TaskParameter="VersionWithTilde" PropertyName="NetStandardTargetingPackPackageVersionWithTilde" />
       <Output TaskParameter="MajorMinorVersion" PropertyName="NetStandardTargetingPackMajorMinorVersion" />
       <Output TaskParameter="MajorMinorPatchVersion" PropertyName="NetStandardTargetingPackMajorMinorPatchVersion" />
     </GetLinuxNativeInstallerDependencyVersions>
