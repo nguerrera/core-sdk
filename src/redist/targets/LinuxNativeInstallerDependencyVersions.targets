@@ -25,9 +25,9 @@
       <Output TaskParameter="MajorMinorVersion" PropertyName="HostFxrMajorMinorVersion" />
     </GetLinuxNativeInstallerDependencyVersions>
 
-    <GetLinuxNativeInstallerDependencyVersions PackageVersion="$(MicrosoftNETStandardLibraryRefPackageVersion)">
+    <GetLinuxNativeInstallerDependencyVersions PackageVersion="$(NETStandardLibraryRefPackageVersion)">
       <Output TaskParameter="VersionWithTidle" PropertyName="NetStandardTargetingPackPackageVersionWithTilde" />
-      <Output TaskParameter="MajorMinorVersion" PropertyName="NetStandardTargetingPackMajorMinorPatchVersion" />
+      <Output TaskParameter="MajorMinorVersion" PropertyName="NetStandardTargetingPackMajorMinorVersion" />
       <Output TaskParameter="MajorMinorPatchVersion" PropertyName="NetStandardTargetingPackMajorMinorPatchVersion" />
     </GetLinuxNativeInstallerDependencyVersions>
   </Target>
